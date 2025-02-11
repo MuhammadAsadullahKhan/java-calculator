@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-public class javacalculator {
+public class javacalculator{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         // Taking operation choice as input
-        System.out.print("Enter operation (add, subtract, multiply, divide): ");
+        System.out.print("Enter operation (add, subtract, multiply, divide, modulus, exponentiation): ");
         String operation = scanner.nextLine().toLowerCase();
 
         // Taking two numbers as input
@@ -32,6 +32,16 @@ public class javacalculator {
                 } else {
                     System.out.println("Division by zero is not allowed.");
                 }
+                break;
+            case "modulus":
+                if (num2 != 0) {
+                    System.out.println("Modulus: " + (num1 % num2));
+                } else {
+                    System.out.println("Modulus by zero is not allowed.");
+                }
+                break;
+            case "exponentiation":
+                System.out.println("Exponentiation: " + Math.pow(num1, num2));
                 break;
             default:
                 System.out.println("Invalid operation.");
